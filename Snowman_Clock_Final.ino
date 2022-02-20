@@ -144,9 +144,9 @@ if(dclock == 1){
     digitalClockDisplay();  
   }
   if (timeStatus() == timeSet) {
-    digitalWrite(13, HIGH); // LED on if synced
+    digitalWrite(12, HIGH); // LED on if synced
   } else {
-    digitalWrite(13, LOW);  // LED off if needs refresh
+    digitalWrite(12, LOW);  // LED off if needs refresh
   }
   delay(1000);
   // set the cursor to column 0, line 1
