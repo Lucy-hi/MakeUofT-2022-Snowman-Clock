@@ -4,16 +4,17 @@
 
 // initialize the library with the numbers of the interface pins
 LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
-int switchState;
-int prevSwitchState = 1;
+int switchState2;
+int prevSwitchState2 = 1;
 int counting = 0;
 int cd = 30;
+int button2 = 8;
 
 void setup() {
   // set up the LCD's number of columns and rows:
   lcd.begin(16, 2);
   lcd.print("Countdown: ");
-  pinMode(8, INPUT);
+  pinMode(button2, INPUT);
 }
 
 void loop() {
@@ -21,9 +22,9 @@ void loop() {
   // (note: line 1 is the second row, since counting begins with 0):
   lcd.setCursor(0, 1);
   
-  switchState = digitalRead(8);
+  switchState2 = digitalRead(button2);
   
-  if((prevSwitchState == 0) && (switchState == 1)){
+  if((prevSwitchState2 == 0) && (switchState2 == 1)){
     if(counting == 0){
       counting = 1;
     }else{
@@ -31,7 +32,7 @@ void loop() {
     }
   }
   
-  prevSwitchState = switchState;
+  prevSwitchState2 = switchState2;
   
   if (cd >= 0) {
   
